@@ -1,0 +1,410 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gcpBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A73E8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gcpGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34A853;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F9D58;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gcpYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBC04;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F9AB00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gcpRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EA4335;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D33B01;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#202124">
+    GCP Migration Architecture - Web Application
+  </text>
+  
+  <!-- Internet/Users -->
+  <circle cx="100" cy="120" r="40" fill="url(#gcpBlue)" opacity="0.8"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">
+    Internet
+  </text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    10M Users
+  </text>
+  
+  <!-- Global Load Balancer -->
+  <rect x="220" y="90" width="120" height="60" rx="10" fill="url(#gcpBlue)" opacity="0.9"/>
+  <text x="280" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    Cloud Load
+  </text>
+  <text x="280" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    Balancer
+  </text>
+  
+  <!-- Cloud CDN -->
+  <rect x="380" y="90" width="100" height="60" rx="10" fill="url(#gcpGreen)" opacity="0.9"/>
+  <text x="430" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    Cloud CDN
+  </text>
+  <text x="430" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    Global Edge
+  </text>
+  
+  <!-- VPC Box -->
+  <rect x="200" y="180" width="900" height="450" rx="15" fill="none" stroke="#4285F4" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="220" y="205" font-family="Arial, sans-serif" font-size="14" fill="#4285F4" font-weight="bold">
+    VPC - Private Network
+  </text>
+  
+  <!-- Frontend Zone -->
+  <rect x="220" y="220" width="200" height="150" rx="10" fill="#E8F0FE" stroke="#4285F4" stroke-width="1"/>
+  <text x="320" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1A73E8" font-weight="bold">
+    Frontend Tier
+  </text>
+  
+  <!-- Cloud Storage for Static Assets -->
+  <rect x="240" y="250" width="80" height="50" rx="5" fill="url(#gcpYellow)" opacity="0.9"/>
+  <text x="280" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud
+  </text>
+  <text x="280" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Storage
+  </text>
+  <text x="280" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Static Assets
+  </text>
+  
+  <!-- Firebase Hosting -->
+  <rect x="330" y="250" width="80" height="50" rx="5" fill="url(#gcpYellow)" opacity="0.9"/>
+  <text x="370" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Firebase
+  </text>
+  <text x="370" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Hosting
+  </text>
+  <text x="370" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    React App
+  </text>
+  
+  <!-- Application Zone -->
+  <rect x="450" y="220" width="200" height="150" rx="10" fill="#E8F5E8" stroke="#34A853" stroke-width="1"/>
+  <text x="550" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0F9D58" font-weight="bold">
+    Application Tier
+  </text>
+  
+  <!-- GKE Cluster -->
+  <rect x="470" y="250" width="80" height="50" rx="5" fill="url(#gcpGreen)" opacity="0.9"/>
+  <text x="510" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    GKE
+  </text>
+  <text x="510" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cluster
+  </text>
+  <text x="510" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Java Backend
+  </text>
+  
+  <!-- Cloud Run -->
+  <rect x="560" y="250" width="80" height="50" rx="5" fill="url(#gcpGreen)" opacity="0.9"/>
+  <text x="600" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud Run
+  </text>
+  <text x="600" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Services
+  </text>
+  <text x="600" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Microservices
+  </text>
+  
+  <!-- Database Zone -->
+  <rect x="680" y="220" width="200" height="150" rx="10" fill="#FEF7E0" stroke="#F9AB00" stroke-width="1"/>
+  <text x="780" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#E37400" font-weight="bold">
+    Database Tier
+  </text>
+  
+  <!-- Cloud SQL -->
+  <rect x="700" y="250" width="80" height="50" rx="5" fill="url(#gcpBlue)" opacity="0.9"/>
+  <text x="740" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud SQL
+  </text>
+  <text x="740" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    MySQL
+  </text>
+  <text x="740" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Primary + Replicas
+  </text>
+  
+  <!-- BigQuery -->
+  <rect x="790" y="250" width="80" height="50" rx="5" fill="url(#gcpBlue)" opacity="0.9"/>
+  <text x="830" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    BigQuery
+  </text>
+  <text x="830" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Analytics
+  </text>
+  <text x="830" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Data Warehouse
+  </text>
+  
+  <!-- Data Processing Zone -->
+  <rect x="220" y="400" width="400" height="150" rx="10" fill="#FCE8E6" stroke="#EA4335" stroke-width="1"/>
+  <text x="420" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D33B01" font-weight="bold">
+    Data Processing Tier
+  </text>
+  
+  <!-- Dataflow -->
+  <rect x="240" y="430" width="80" height="50" rx="5" fill="url(#gcpRed)" opacity="0.9"/>
+  <text x="280" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Dataflow
+  </text>
+  <text x="280" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Batch Jobs
+  </text>
+  <text x="280" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    5TB Daily
+  </text>
+  
+  <!-- Cloud Composer -->
+  <rect x="330" y="430" width="80" height="50" rx="5" fill="url(#gcpRed)" opacity="0.9"/>
+  <text x="370" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud
+  </text>
+  <text x="370" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Composer
+  </text>
+  <text x="370" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Orchestration
+  </text>
+  
+  <!-- Cloud Storage for Data Lake -->
+  <rect x="420" y="430" width="80" height="50" rx="5" fill="url(#gcpYellow)" opacity="0.9"/>
+  <text x="460" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud
+  </text>
+  <text x="460" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Storage
+  </text>
+  <text x="460" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Data Lake
+  </text>
+  
+  <!-- Dataproc -->
+  <rect x="510" y="430" width="80" height="50" rx="5" fill="url(#gcpRed)" opacity="0.9"/>
+  <text x="550" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Dataproc
+  </text>
+  <text x="550" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Spark
+  </text>
+  <text x="550" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Optional
+  </text>
+  
+  <!-- Security & Monitoring Zone -->
+  <rect x="650" y="400" width="400" height="150" rx="10" fill="#F3E8FF" stroke="#9C27B0" stroke-width="1"/>
+  <text x="850" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7B1FA2" font-weight="bold">
+    Security &amp; Monitoring
+  </text>
+  
+  <!-- Cloud Monitoring -->
+  <rect x="670" y="430" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="710" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud
+  </text>
+  <text x="710" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Monitoring
+  </text>
+  
+  <!-- Cloud Logging -->
+  <rect x="760" y="430" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="800" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud
+  </text>
+  <text x="800" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Logging
+  </text>
+  
+  <!-- Security Command Center -->
+  <rect x="850" y="430" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="890" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Security
+  </text>
+  <text x="890" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Command
+  </text>
+  <text x="890" y="471" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Center
+  </text>
+  
+  <!-- IAM -->
+  <rect x="940" y="430" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="980" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    IAM &amp;
+  </text>
+  <text x="980" y="465" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Security
+  </text>
+  
+  <!-- Arrows -->
+  <!-- Internet to Load Balancer -->
+  <line x1="140" y1="120" x2="220" y2="120" stroke="#4285F4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Load Balancer to CDN -->
+  <line x1="340" y1="120" x2="380" y2="120" stroke="#4285F4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- CDN to Frontend -->
+  <line x1="430" y1="150" x2="320" y2="220" stroke="#4285F4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Frontend to Application -->
+  <line x1="420" y1="275" x2="470" y2="275" stroke="#34A853" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Application to Database -->
+  <line x1="650" y1="275" x2="700" y2="275" stroke="#F9AB00" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Application to Data Processing -->
+  <line x1="550" y1="300" x2="420" y2="430" stroke="#EA4335" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Data Processing to BigQuery -->
+  <line x1="500" y1="455" x2="790" y2="275" stroke="#1A73E8" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Regions Indicator -->
+  <rect x="900" y="230" width="180" height="80" rx="10" fill="#F8F9FA" stroke="#34A853" stroke-width="2"/>
+  <text x="990" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0F9D58" font-weight="bold">
+    Multi-Region Setup
+  </text>
+  <text x="990" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Primary: us-central1
+  </text>
+  <text x="990" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Secondary: europe-west1
+  </text>
+  <text x="990" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    GDPR Compliant
+  </text>
+  
+  <!-- CI/CD Pipeline Box -->
+  <rect x="220" y="580" width="860" height="80" rx="10" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+  <text x="650" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1976D2" font-weight="bold">
+    CI/CD Pipeline
+  </text>
+  
+  <!-- Source Control -->
+  <rect x="240" y="610" width="100" height="40" rx="5" fill="#2196F3" opacity="0.9"/>
+  <text x="290" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud Source
+  </text>
+  <text x="290" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Repositories
+  </text>
+  
+  <!-- Cloud Build -->
+  <rect x="360" y="610" width="100" height="40" rx="5" fill="#FF9800" opacity="0.9"/>
+  <text x="410" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Cloud Build
+  </text>
+  <text x="410" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    CI/CD
+  </text>
+  
+  <!-- Container Registry -->
+  <rect x="480" y="610" width="100" height="40" rx="5" fill="#4CAF50" opacity="0.9"/>
+  <text x="530" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Container
+  </text>
+  <text x="530" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Registry
+  </text>
+  
+  <!-- Binary Authorization -->
+  <rect x="600" y="610" width="100" height="40" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="650" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Binary
+  </text>
+  <text x="650" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Authorization
+  </text>
+  
+  <!-- Deploy to GKE -->
+  <rect x="720" y="610" width="100" height="40" rx="5" fill="#34A853" opacity="0.9"/>
+  <text x="770" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Deploy to
+  </text>
+  <text x="770" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    GKE
+  </text>
+  
+  <!-- GitOps -->
+  <rect x="840" y="610" width="100" height="40" rx="5" fill="#607D8B" opacity="0.9"/>
+  <text x="890" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    GitOps
+  </text>
+  <text x="890" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Deployment
+  </text>
+  
+  <!-- CI/CD Pipeline Arrows -->
+  <line x1="340" y1="630" x2="360" y2="630" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="460" y1="630" x2="480" y2="630" stroke="#FF9800" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="630" x2="600" y2="630" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="630" x2="720" y2="630" stroke="#9C27B0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="820" y1="630" x2="840" y2="630" stroke="#34A853" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Cost Optimization Notes -->
+  <rect x="220" y="680" width="400" height="80" rx="10" fill="#F1F8E9" stroke="#8BC34A" stroke-width="2"/>
+  <text x="420" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#689F38" font-weight="bold">
+    Cost Optimization Features
+  </text>
+  <text x="240" y="720" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Preemptible VMs for batch processing (80% savings)
+  </text>
+  <text x="240" y="735" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Auto-scaling based on demand
+  </text>
+  <text x="240" y="750" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Storage lifecycle policies for archival
+  </text>
+  
+  <!-- Security Features -->
+  <rect x="640" y="680" width="400" height="80" rx="10" fill="#FFEBEE" stroke="#F44336" stroke-width="2"/>
+  <text x="840" y="700" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D32F2F" font-weight="bold">
+    Security &amp; Compliance Features
+  </text>
+  <text x="660" y="720" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • VPC with private subnets and NAT gateway
+  </text>
+  <text x="660" y="735" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • Encryption at rest and in transit (GDPR compliant)
+  </text>
+  <text x="660" y="750" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • IAM with principle of least privilege
+  </text>
+  
+  <!-- Performance Metrics -->
+  <text x="50" y="300" font-family="Arial, sans-serif" font-size="14" fill="#1976D2" font-weight="bold">
+    Performance
+  </text>
+  <text x="50" y="320" font-family="Arial, sans-serif" font-size="12" fill="#424242">
+    Target Metrics:
+  </text>
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • 99.95% Uptime SLA
+  </text>
+  <text x="50" y="355" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • &lt;200ms Response Time
+  </text>
+  <text x="50" y="370" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • Auto-scale 0-1000 pods
+  </text>
+  <text x="50" y="385" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    • 5TB Daily Processing
+  </text>
