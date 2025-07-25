@@ -230,7 +230,7 @@ resource "google_sql_database_instance" "main" {
     ip_configuration {
       ipv4_enabled    = false
       private_network = google_compute_network.main_vpc.id
-      require_ssl     = true
+      # require_ssl     = true
     }
     
     # Maintenance window
@@ -479,9 +479,9 @@ resource "google_compute_backend_bucket" "static_assets" {
     negative_caching             = true
     serve_while_stale            = 86400
     cache_key_policy {
-      include_host         = true
-      include_protocol     = true
-      include_query_string = false
+      # include_host         = true
+      # include_protocol     = true
+      # include_query_string = false
     }
   }
 }
