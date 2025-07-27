@@ -1,0 +1,457 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="awsOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9900;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF7700;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="awsBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#232F3E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161E2D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="awsGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7AA116;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5D7C0F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="awsRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D13212;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B02A0F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#232F3E">
+    AWS Migration Architecture - Web Application (10M Monthly Users)
+  </text>
+  
+  <!-- Internet/Users -->
+  <circle cx="100" cy="120" r="40" fill="url(#awsOrange)" opacity="0.8"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">
+    Internet
+  </text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    10M Users
+  </text>
+  
+  <!-- Route 53 -->
+  <rect x="220" y="90" width="120" height="60" rx="10" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="280" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    Route 53
+  </text>
+  <text x="280" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    DNS + Health
+  </text>
+  
+  <!-- CloudFront CDN -->
+  <rect x="380" y="90" width="120" height="60" rx="10" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="440" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">
+    CloudFront
+  </text>
+  <text x="440" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    Global CDN
+  </text>
+  
+  <!-- Application Load Balancer -->
+  <rect x="540" y="90" width="120" height="60" rx="10" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">
+    Application
+  </text>
+  <text x="600" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white" font-weight="bold">
+    Load Balancer
+  </text>
+  <text x="600" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">
+    Multi-AZ
+  </text>
+  
+  <!-- VPC Container -->
+  <rect x="200" y="180" width="1150" height="500" rx="15" fill="none" stroke="#FF9900" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="220" y="205" font-family="Arial, sans-serif" font-size="14" fill="#FF9900" font-weight="bold">
+    VPC - Multi-AZ Private Network (10.0.0.0/16)
+  </text>
+  
+  <!-- Availability Zone A -->
+  <rect x="220" y="220" width="350" height="200" rx="10" fill="#FFF8E1" stroke="#FF9900" stroke-width="2"/>
+  <text x="395" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#E65100" font-weight="bold">
+    Availability Zone A (us-east-1a)
+  </text>
+  
+  <!-- S3 for Static Assets -->
+  <rect x="240" y="250" width="80" height="50" rx="5" fill="url(#awsGreen)" opacity="0.9"/>
+  <text x="280" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    S3 Bucket
+  </text>
+  <text x="280" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Static Assets
+  </text>
+  <text x="280" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    React App
+  </text>
+  
+  <!-- EKS Cluster AZ-A -->
+  <rect x="340" y="250" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="380" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    EKS
+  </text>
+  <text x="380" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Worker Nodes
+  </text>
+  <text x="380" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Java Backend
+  </text>
+  
+  <!-- RDS Primary AZ-A -->
+  <rect x="240" y="320" width="80" height="50" rx="5" fill="url(#awsBlue)" opacity="0.9"/>
+  <text x="280" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    RDS MySQL
+  </text>
+  <text x="280" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Primary
+  </text>
+  <text x="280" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Multi-AZ
+  </text>
+  
+  <!-- Lambda Functions AZ-A -->
+  <rect x="340" y="320" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="380" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Lambda
+  </text>
+  <text x="380" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Functions
+  </text>
+  <text x="380" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Serverless
+  </text>
+  
+  <!-- Availability Zone B -->
+  <rect x="600" y="220" width="350" height="200" rx="10" fill="#E8F5E8" stroke="#7AA116" stroke-width="2"/>
+  <text x="775" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">
+    Availability Zone B (us-east-1b)
+  </text>
+  
+  <!-- EKS Cluster AZ-B -->
+  <rect x="620" y="250" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="660" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    EKS
+  </text>
+  <text x="660" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Worker Nodes
+  </text>
+  <text x="660" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Java Backend
+  </text>
+  
+  <!-- Fargate -->
+  <rect x="720" y="250" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="760" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Fargate
+  </text>
+  <text x="760" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Serverless
+  </text>
+  <text x="760" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Containers
+  </text>
+  
+  <!-- RDS Read Replica AZ-B -->
+  <rect x="620" y="320" width="80" height="50" rx="5" fill="url(#awsBlue)" opacity="0.9"/>
+  <text x="660" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    RDS MySQL
+  </text>
+  <text x="660" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Read Replica
+  </text>
+  <text x="660" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Read Scaling
+  </text>
+  
+  <!-- ElastiCache -->
+  <rect x="720" y="320" width="80" height="50" rx="5" fill="url(#awsRed)" opacity="0.9"/>
+  <text x="760" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    ElastiCache
+  </text>
+  <text x="760" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Redis
+  </text>
+  <text x="760" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    In-Memory
+  </text>
+  
+  <!-- Data Processing Zone -->
+  <rect x="980" y="220" width="350" height="200" rx="10" fill="#FFF3E0" stroke="#FF8F00" stroke-width="2"/>
+  <text x="1155" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#E65100" font-weight="bold">
+    Data Analytics &amp; Processing
+  </text>
+  
+  <!-- Redshift -->
+  <rect x="1000" y="250" width="80" height="50" rx="5" fill="url(#awsBlue)" opacity="0.9"/>
+  <text x="1040" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Redshift
+  </text>
+  <text x="1040" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Data Warehouse
+  </text>
+  <text x="1040" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Analytics
+  </text>
+  
+  <!-- EMR -->
+  <rect x="1100" y="250" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1140" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    EMR
+  </text>
+  <text x="1140" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Spark/Hadoop
+  </text>
+  <text x="1140" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    5TB Daily
+  </text>
+  
+  <!-- Glue -->
+  <rect x="1200" y="250" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1240" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Glue
+  </text>
+  <text x="1240" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    ETL Service
+  </text>
+  <text x="1240" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Serverless
+  </text>
+  
+  <!-- Kinesis -->
+  <rect x="1000" y="320" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1040" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Kinesis
+  </text>
+  <text x="1040" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Data Streams
+  </text>
+  <text x="1040" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Real-time
+  </text>
+  
+  <!-- Step Functions -->
+  <rect x="1100" y="320" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1140" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Step Functions
+  </text>
+  <text x="1140" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Orchestration
+  </text>
+  <text x="1140" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Workflow
+  </text>
+  
+  <!-- S3 Data Lake -->
+  <rect x="1200" y="320" width="80" height="50" rx="5" fill="url(#awsGreen)" opacity="0.9"/>
+  <text x="1240" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    S3 Data Lake
+  </text>
+  <text x="1240" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Intelligent
+  </text>
+  <text x="1240" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Tiering
+  </text>
+  
+  <!-- Security & Monitoring Zone -->
+  <rect x="220" y="450" width="730" height="120" rx="10" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2"/>
+  <text x="585" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6A1B9A" font-weight="bold">
+    Security, Monitoring &amp; Compliance
+  </text>
+  
+  <!-- CloudWatch -->
+  <rect x="240" y="480" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="280" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    CloudWatch
+  </text>
+  <text x="280" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Monitoring
+  </text>
+  <text x="280" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Logs &amp; Metrics
+  </text>
+  
+  <!-- X-Ray -->
+  <rect x="340" y="480" width="80" height="50" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="380" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    X-Ray
+  </text>
+  <text x="380" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Tracing
+  </text>
+  <text x="380" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Distributed
+  </text>
+  
+  <!-- Security Hub -->
+  <rect x="440" y="480" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="480" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Security Hub
+  </text>
+  <text x="480" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Compliance
+  </text>
+  <text x="480" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    GDPR Ready
+  </text>
+  
+  <!-- GuardDuty -->
+  <rect x="540" y="480" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="580" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    GuardDuty
+  </text>
+  <text x="580" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Threat
+  </text>
+  <text x="580" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Detection
+  </text>
+  
+  <!-- IAM -->
+  <rect x="640" y="480" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="680" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    IAM
+  </text>
+  <text x="680" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Access Control
+  </text>
+  <text x="680" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Zero Trust
+  </text>
+  
+  <!-- WAF -->
+  <rect x="740" y="480" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="780" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    WAF
+  </text>
+  <text x="780" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white" font-weight="bold">
+    Web Firewall
+  </text>
+  <text x="780" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    DDoS Protection
+  </text>
+  
+  <!-- Secrets Manager -->
+  <rect x="840" y="480" width="80" height="50" rx="5" fill="#9C27B0" opacity="0.9"/>
+  <text x="880" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Secrets
+  </text>
+  <text x="880" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Manager
+  </text>
+  <text x="880" y="521" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">
+    Encryption
+  </text>
+  
+  <!-- CI/CD Pipeline Zone -->
+  <rect x="980" y="450" width="370" height="120" rx="10" fill="#E1F5FE" stroke="#0288D1" stroke-width="2"/>
+  <text x="1165" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#01579B" font-weight="bold">
+    CI/CD Pipeline
+  </text>
+  
+  <!-- CodeCommit -->
+  <rect x="1000" y="480" width="70" height="40" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1035" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    CodeCommit
+  </text>
+  <text x="1035" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Git Repos
+  </text>
+  
+  <!-- CodeBuild -->
+  <rect x="1080" y="480" width="70" height="40" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1115" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    CodeBuild
+  </text>
+  <text x="1115" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    CI/CD
+  </text>
+  
+  <!-- ECR -->
+  <rect x="1160" y="480" width="70" height="40" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1195" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    ECR
+  </text>
+  <text x="1195" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Containers
+  </text>
+  
+  <!-- CodeDeploy -->
+  <rect x="1240" y="480" width="70" height="40" rx="5" fill="url(#awsOrange)" opacity="0.9"/>
+  <text x="1275" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    CodeDeploy
+  </text>
+  <text x="1275" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" font-weight="bold">
+    Deployment
+  </text>
+  
+  <!-- Cost Optimization Box -->
+  <rect x="220" y="600" width="300" height="140" rx="10" fill="#F1F8E9" stroke="#8BC34A" stroke-width="2"/>
+  <text x="370" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#33691E" font-weight="bold">
+    Cost Optimization
+  </text>
+  <text x="240" y="640" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Spot Instances (90% savings)
+  </text>
+  <text x="240" y="655" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Auto Scaling Groups
+  </text>
+  <text x="240" y="670" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • S3 Intelligent Tiering
+  </text>
+  <text x="240" y="685" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Reserved Instances
+  </text>
+  <text x="240" y="700" font-family="Arial, sans-serif" font-size="10" fill="#558B2F">
+    • Lambda pay-per-request
+  </text>
+  <text x="240" y="720" font-family="Arial, sans-serif" font-size="11" fill="#33691E" font-weight="bold">
+    Est. Cost: $7K-12K/month
+  </text>
+  
+  <!-- Performance Metrics -->
+  <rect x="540" y="600" width="300" height="140" rx="10" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <text x="690" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0D47A1" font-weight="bold">
+    Performance Targets
+  </text>
+  <text x="560" y="640" font-family="Arial, sans-serif" font-size="10" fill="#1565C0">
+    • 99.99% Uptime (Multi-AZ)
+  </text>
+  <text x="560" y="655" font-family="Arial, sans-serif" font-size="10" fill="#1565C0">
+    • &lt;150ms Response Time
+  </text>
+  <text x="560" y="670" font-family="Arial, sans-serif" font-size="10" fill="#1565C0">
+    • Auto-scale 1-100 instances
+  </text>
+  <text x="560" y="685" font-family="Arial, sans-serif" font-size="10" fill="#1565C0">
+    • 5TB Daily Processing
+  </text>
+  <text x="560" y="700" font-family="Arial, sans-serif" font-size="10" fill="#1565C0">
+    • Global Edge Locations
+  </text>
+  <text x="560" y="720" font-family="Arial, sans-serif" font-size="11" fill="#0D47A1" font-weight="bold">
+    CloudFront: 60% faster loads
+  </text>
+  
+  <!-- Security & Compliance -->
+  <rect x="860" y="600" width="300" height="140" rx="10" fill="#FFEBEE" stroke="#F44336" stroke-width="2"/>
+  <text x="1010" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#B71C1C" font-weight="bold">
+    Security &amp; Compliance
+  </text>
+  <text x="880" y="640" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • VPC with Private Subnets
+  </text>
+  <text x="880" y="655" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • Encryption: EBS, S3, RDS
+  </text>
+  <text x="880" y="670" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • GDPR: EU regions available
+  </text>
+  <text x="880" y="685" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
+    • IAM least privilege
+  </text>
+  <text x="880" y="700" font-family="Arial, sans-serif" font-size="10" fill="#C62828">
